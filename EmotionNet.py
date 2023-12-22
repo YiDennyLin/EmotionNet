@@ -42,10 +42,10 @@ class EmotionNet(nn.Module):
     x = self.resnet.relu(x)
     x = self.resnet.maxpool(x)
 
-    x = self.sa(x) * x
+    # x = self.sa(x) * x
 
     x = self.resnet.layer1(x)
-    # x = self.sa(x) * x  # Spatial Attention
+    x = self.sa(x) * x  # Spatial Attention
 
     x = self.resnet.layer2(x)
     # x = self.sa(x) * x
